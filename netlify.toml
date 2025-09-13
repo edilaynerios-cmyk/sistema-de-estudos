@@ -1,0 +1,17 @@
+# Configurações de Build para o Netlify
+[build]
+  # Pasta base de onde os comandos devem ser executados
+  base = "frontend"
+
+  # Comando para construir o site
+  command = "npm run build"
+
+  # Pasta onde o site construído será salvo (relativo à pasta base)
+  publish = "build"
+
+# Redirecionamento para Single Page Apps (SPA) como o React
+# Isso garante que o F5 em qualquer página funcione corretamente
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
