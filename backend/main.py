@@ -11,7 +11,14 @@ from auth import get_password_hash, verify_password, create_access_token, create
 
 load_dotenv()
 app = FastAPI(title="Sistema de Estudos para Concurso", version="1.0.0")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:3000"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "https://sistemadeestudos.netlify.app",
+],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(DATABASE_URL)
 
