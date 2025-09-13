@@ -82,6 +82,13 @@ def delete_cycle(cycle_id: int, user_id: int = Depends(get_current_user), sessio
     for subject in subjects: session.delete(subject)
     session.delete(cycle); session.commit()
 
+@api_router.delete("/users/me", status_code=status.HTTP_204_NO_CONTENT)
+def delete_current_user(user_id: int = Depends(get_current_user), session: Session = Depends(get_session)):
+    """Apaga o usuário logado e todos os seus dados associados."""
+    user = session.get(User, user_id)
+    if not user:
+        raise HTTPException(status_code=404, detail="Usuário não encontrado")
+
 @api_router.post("/studies/", response_model=StudySession)
 def create_study_session(study_data: StudySessionCreate, user_id: int = Depends(get_current_user), session: Session = Depends(get_session)):
     study_session = StudySession(user_id=user_id, date=date.today(), **study_data.model_dump())

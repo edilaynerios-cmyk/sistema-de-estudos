@@ -86,3 +86,7 @@ export const subjectService = {
   getSubjectDetails: (subjectName) => protectedApi.get(`/subject/${subjectName}`),
   getAllSubjects: () => protectedApi.get('/subjects/'),
 };
+
+export const userService = {
+  deleteAccount: () => protectedApi.delete('/users/me'),
+};
