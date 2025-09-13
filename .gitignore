@@ -1,0 +1,14 @@
+# Ambiente Virtual do Python
+venv/
+
+# Arquivos de ambiente e senhas
+.env
+*.env.*
+
+# Pastas de pacotes do Node.js
+/frontend/node_modules/
+
+# Arquivos de cache e de sistema
+__pycache__/
+.vscode/
+.DS_Store
