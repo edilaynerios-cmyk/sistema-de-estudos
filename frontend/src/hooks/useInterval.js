@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 // O nosso "superpoder" para criar timers que funcionam bem com o React
 export function useInterval(callback, delay) {

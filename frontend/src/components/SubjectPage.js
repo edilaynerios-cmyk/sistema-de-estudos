@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { subjectService } from '../services/api';
 import { Typography, Spin, Row, Col, Card, Statistic, List, Tag, message, Empty } from 'antd';
 import dayjs from 'dayjs';
